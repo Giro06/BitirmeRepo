@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Giray\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Giray\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_BitirmeProjesi.-1981927546.00" t="ExcludeRecursive" />
+    <e p="D:\UnityGames\BitirmeProjesi" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_Script" t="Include">
+          <e p="AdminPanelScript.cs" t="Include" />
+          <e p="DoctorSystem" t="Include">
+            <e p="AddMedicineToList.cs" t="Include" />
+            <e p="DoctorInformation.cs" t="Include" />
+            <e p="DoctorLoginScript.cs" t="Include" />
+            <e p="DoctorMainPanelScript.cs" t="Include" />
+            <e p="MedicineBox.cs" t="Include" />
+            <e p="ReceiptListController.cs" t="Include" />
+          </e>
+          <e p="UserSystem" t="Include">
+            <e p="ContainBox.cs" t="Include" />
+            <e p="RecipeBox.cs" t="Include" />
+            <e p="RecipeDetailsPanel.cs" t="Include" />
+            <e p="RecipePanelManager.cs" t="Include" />
+            <e p="UserInfoPanel.cs" t="Include" />
+            <e p="UserInformation.cs" t="Include" />
+            <e p="UserLogin.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Assets" t="Include">
+          <e p="TextMesh Pro" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans - OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Modern UI Pack" t="Include">
+          <e p="Editor" t="Include">
+            <e p="InitMUIP.cs" t="Include" />
+            <e p="ModernUI.cs" t="Include" />
+          </e>
+          <e p="Read Me.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="CustomDropdown.cs" t="Include" />
+            <e p="CustomInputField.cs" t="Include" />
+            <e p="DemoHamburgerMenu.cs" t="Include" />
+            <e p="DemoManager.cs" t="Include" />
+            <e p="DemoScrollForMore.cs" t="Include" />
+            <e p="DropdownMultiSelect.cs" t="Include" />
+            <e p="HamburgerMenuManager.cs" t="Include" />
+            <e p="HamburgerPanelButton.cs" t="Include" />
+            <e p="HorizontalSelector.cs" t="Include" />
+            <e p="LaunchURL.cs" t="Include" />
+            <e p="ModalWindowTabs.cs" t="Include" />
+            <e p="NotificationExample.cs" t="Include" />
+            <e p="PBFilled.cs" t="Include" />
+            <e p="ProgressBar.cs" t="Include" />
+            <e p="RadialSlider.cs" t="Include" />
+            <e p="RangeMaxSlider.cs" t="Include" />
+            <e p="RangeMinSlider.cs" t="Include" />
+            <e p="RangeSlider.cs" t="Include" />
+            <e p="SliderManager.cs" t="Include" />
+            <e p="SwitchAnim.cs" t="Include" />
+            <e p="ToggleAnim.cs" t="Include" />
+            <e p="UIElementInFront.cs" t="Include" />
+            <e p="UIGradient.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="UI Blur.shader" t="Include" />
+            <e p="UI HQ Blur.shader" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="BitirmeProjesi.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
