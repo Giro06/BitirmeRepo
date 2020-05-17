@@ -66,8 +66,7 @@ public class RecipeDetailsPanel : MonoBehaviour
         encoded.Apply();
         return encoded;
     }
-    private static Color32[] Encode(string textForEncoding, 
-        int width, int height) {
+    private static Color32[] Encode(string textForEncoding,int width, int height) {
         var writer = new BarcodeWriter {
             Format = BarcodeFormat.QR_CODE,
             Options = new QrCodeEncodingOptions {

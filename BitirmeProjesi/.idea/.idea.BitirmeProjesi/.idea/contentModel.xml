@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Giray\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Giray\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_BitirmeProjesi.-1981927546.00" t="ExcludeRecursive" />
-    <e p="D:\UnityGames\BitirmeProjesi" t="IncludeRecursive">
+    <e p="C:\Users\Giray\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_BitirmeProjesi.-1940990550.00" t="ExcludeRecursive" />
+    <e p="D:\UnityGames\BitirmeRepo\BitirmeProjesi" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Script" t="Include">
           <e p="AdminPanelScript.cs" t="Include" />
+          <e p="CurrentTime.cs" t="Include" />
           <e p="DoctorSystem" t="Include">
             <e p="AddMedicineToList.cs" t="Include" />
             <e p="DoctorInformation.cs" t="Include" />
@@ -17,6 +18,7 @@
             <e p="MedicineBox.cs" t="Include" />
             <e p="ReceiptListController.cs" t="Include" />
           </e>
+          <e p="StockScript.cs" t="Include" />
           <e p="UserSystem" t="Include">
             <e p="ContainBox.cs" t="Include" />
             <e p="RecipeBox.cs" t="Include" />
@@ -25,6 +27,13 @@
             <e p="UserInfoPanel.cs" t="Include" />
             <e p="UserInformation.cs" t="Include" />
             <e p="UserLogin.cs" t="Include" />
+          </e>
+          <e p="VendingSystem" t="Include">
+            <e p="AvailableMedicineBox.cs" t="Include" />
+            <e p="AvailableMedicinePanel.cs" t="Include" />
+            <e p="QRreadScript.cs" t="Include" />
+            <e p="RecipeInformation.cs" t="Include" />
+            <e p="VendingMachineStartControllerScript.cs" t="Include" />
           </e>
         </e>
         <e p="Assets" t="Include">

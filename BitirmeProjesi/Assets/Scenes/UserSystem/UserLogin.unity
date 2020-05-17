@@ -2489,7 +2489,6 @@ MonoBehaviour:
   passwordInput: {fileID: 1807773876}
   popUp: {fileID: 637727036}
   popUpText: {fileID: 1093908981}
-  userInformation: {fileID: 1986987215}
 --- !u!114 &1986987215
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public  class RecipePanelManager : MonoBehaviour
     {    
         WWWForm form= new WWWForm(); 
         form.AddField("U_TcNum",U_TcNum); 
-        UnityWebRequest ww= UnityWebRequest.Post("http://localhost/GetRecipeNoFromTc.php",form);
+        UnityWebRequest ww= UnityWebRequest.Post("http://192.168.1.34/GetRecipeNoFromTc.php",form);
         yield return ww.SendWebRequest();
         char[] spearator = {'/'};
         string[] name = ww.downloadHandler.text.Split(spearator);
@@ -75,7 +75,7 @@ public  class RecipePanelManager : MonoBehaviour
     {
         WWWForm form= new WWWForm(); 
         form.AddField("RecipeNo",recipeNo);
-        UnityWebRequest ww= UnityWebRequest.Post("http://localhost/GetRecipeInformationFromRecipeNo.php",form);
+        UnityWebRequest ww= UnityWebRequest.Post("http://192.168.1.34/GetRecipeInformationFromRecipeNo.php",form);
         yield return ww.SendWebRequest();
         char[] spearator = {'/'};
         string[] recipeInfo = ww.downloadHandler.text.Split(spearator);
@@ -93,7 +93,7 @@ public  class RecipePanelManager : MonoBehaviour
         
         form= new WWWForm(); 
         form.AddField("RecipeNo",recipeNo);
-        ww= UnityWebRequest.Post("http://localhost/GetAllContainsFromRecipeNo.php",form);
+        ww= UnityWebRequest.Post("http://192.168.1.34/GetAllContainsFromRecipeNo.php",form);
         yield return ww.SendWebRequest();
         char[] containSpearator = {'&'};
         string[] contains = ww.downloadHandler.text.Split(containSpearator);
@@ -114,7 +114,7 @@ public  class RecipePanelManager : MonoBehaviour
             
             form= new WWWForm(); 
             form.AddField("M_ID",tempContain.M_ID);
-            ww= UnityWebRequest.Post("http://localhost/GetMedicineNameFromID.php",form);
+            ww= UnityWebRequest.Post("http://192.168.1.34/GetMedicineNameFromID.php",form);
             yield return ww.SendWebRequest();
             tempContain.M_name = ww.downloadHandler.text;
             temp.medicines.Add(tempContain);

@@ -82,12 +82,14 @@
      <Compile Include="Assets\Modern UI Pack\Scripts\UIElementInFront.cs" />
      <Compile Include="Assets\Modern UI Pack\Scripts\UIGradient.cs" />
      <Compile Include="Assets\_Script\AdminPanelScript.cs" />
+     <Compile Include="Assets\_Script\CurrentTime.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\AddMedicineToList.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\DoctorInformation.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\DoctorLoginScript.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\DoctorMainPanelScript.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\MedicineBox.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\ReceiptListController.cs" />
+     <Compile Include="Assets\_Script\StockScript.cs" />
      <Compile Include="Assets\_Script\UserSystem\ContainBox.cs" />
      <Compile Include="Assets\_Script\UserSystem\RecipeBox.cs" />
      <Compile Include="Assets\_Script\UserSystem\RecipeDetailsPanel.cs" />
@@ -95,6 +97,11 @@
      <Compile Include="Assets\_Script\UserSystem\UserInfoPanel.cs" />
      <Compile Include="Assets\_Script\UserSystem\UserInformation.cs" />
      <Compile Include="Assets\_Script\UserSystem\UserLogin.cs" />
+     <Compile Include="Assets\_Script\VendingSystem\AvailableMedicineBox.cs" />
+     <Compile Include="Assets\_Script\VendingSystem\AvailableMedicinePanel.cs" />
+     <Compile Include="Assets\_Script\VendingSystem\QRreadScript.cs" />
+     <Compile Include="Assets\_Script\VendingSystem\RecipeInformation.cs" />
+     <Compile Include="Assets\_Script\VendingSystem\VendingMachineStartControllerScript.cs" />
      <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -117,40 +124,31 @@
      <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Recorder">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/UnityGames/BitirmeProjesi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/UnityHere/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -324,7 +322,7 @@
  <HintPath>D:/UnityHere/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="zxing.unity">
- <HintPath>D:/UnityGames/BitirmeProjesi/Assets/zxing.unity.dll</HintPath>
+ <HintPath>D:/UnityGames/BitirmeRepo/BitirmeProjesi/Assets/zxing.unity.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/UnityHere/2019.3.0f6/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

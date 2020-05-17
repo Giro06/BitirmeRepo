@@ -15,8 +15,7 @@ public class DoctorLoginScript : MonoBehaviour
     public GameObject popUp;
     public TMP_Text popUpText;
 
-    [Header("DoctorInfoHolder")] 
-    public DoctorInformation DoctorInformation;
+     
     public void LoginButton()
     {
         StartCoroutine(ICheckLogin());

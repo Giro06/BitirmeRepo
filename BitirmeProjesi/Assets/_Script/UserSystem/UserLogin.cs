@@ -16,8 +16,7 @@ public class UserLogin : MonoBehaviour
     public GameObject popUp;
     public TMP_Text popUpText;
 
-    [Header("UserInfoHolder")] 
-    public UserInformation userInformation;
+    
     public void LoginButton()
     {
         StartCoroutine(ICheckLogin());
@@ -28,7 +27,7 @@ public class UserLogin : MonoBehaviour
         WWWForm form= new WWWForm();
         form.AddField("Tc_No",tcInput.text);
         form.AddField("U_Password",passwordInput.text);
-        UnityWebRequest ww= UnityWebRequest.Post("http://localhost/UserLoginCheck.php",form);
+        UnityWebRequest ww= UnityWebRequest.Post("http://192.168.1.34/UserLoginCheck.php",form);
         yield return ww.SendWebRequest();
         PopUp(ww.downloadHandler.text);
 
@@ -36,7 +35,7 @@ public class UserLogin : MonoBehaviour
         {
             UserInformation.userTc = tcInput.text;
             yield return new WaitForSeconds(1);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(1);
         }
     }
     

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/DoctorSystem/DoctorLogin.unity
+- path: Assets/Scenes/VendingMachine System/VendingMachineStartScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

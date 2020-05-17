@@ -20,31 +20,31 @@ public class UserInfoPanel : MonoBehaviour
         //Check User exits
         WWWForm form= new WWWForm();
         form.AddField("Tc_No",Tc_No);
-        UnityWebRequest ww= UnityWebRequest.Post("http://localhost/CheckUserFromTc.php",form);
+        UnityWebRequest ww= UnityWebRequest.Post("http://192.168.1.34/CheckUserFromTc.php",form);
         yield return ww.SendWebRequest();
         //NAME
         u_tcNOtext.text = Tc_No;
         form= new WWWForm();
         form.AddField("Tc_No",Tc_No);
-        ww= UnityWebRequest.Post("http://localhost/GetUserNameFromTc.php",form);
+        ww= UnityWebRequest.Post("http://192.168.1.34/GetUserNameFromTc.php",form);
         yield return ww.SendWebRequest();
         u_firstNameText.text= ww.downloadHandler.text;
         //Sname
         form= new WWWForm();
         form.AddField("Tc_No",Tc_No);
-        ww= UnityWebRequest.Post("http://localhost/GetUserSnameFromTc.php",form);
+        ww= UnityWebRequest.Post("http://192.168.1.34/GetUserSnameFromTc.php",form);
         yield return ww.SendWebRequest();
         u_surnameText.text= ww.downloadHandler.text;
         //Bdate
         form= new WWWForm();
         form.AddField("Tc_No",Tc_No);
-        ww= UnityWebRequest.Post("http://localhost/GetUserBdateFromTc.php",form);
+        ww= UnityWebRequest.Post("http://192.168.1.34/GetUserBdateFromTc.php",form);
         yield return ww.SendWebRequest();
         u_birthdateText.text= ww.downloadHandler.text;
         //Insurance
         form= new WWWForm();
         form.AddField("Tc_No",Tc_No);
-        ww= UnityWebRequest.Post("http://localhost/GetUserInsuranceFromTc.php",form);
+        ww= UnityWebRequest.Post("http://192.168.1.34/GetUserInsuranceFromTc.php",form);
         yield return ww.SendWebRequest();
         if (ww.downloadHandler.text == "1")
         {

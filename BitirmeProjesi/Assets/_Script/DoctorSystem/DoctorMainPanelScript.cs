@@ -12,8 +12,7 @@ public class DoctorMainPanelScript : MonoBehaviour
     public GameObject popUp;
     public TMP_Text popUpText;
     
-    [Header("Doctor Information")] 
-    public DoctorInformation DoctorInformation;
+    
 
     [Header("Doctor Panel Section")] 
     public TMP_Text doctorIDText;
