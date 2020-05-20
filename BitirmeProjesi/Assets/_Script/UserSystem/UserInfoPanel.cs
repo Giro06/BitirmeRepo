@@ -10,6 +10,8 @@ public class UserInfoPanel : MonoBehaviour
     public TMP_Text u_surnameText;
     public TMP_Text u_birthdateText;
     public TMP_Text u_ınsuranceText;
+
+    public GameObject settingPanel;
     void Start()
     {
         StartCoroutine(GetUserInfoWithTC(UserInformation.userTc));
@@ -56,4 +58,10 @@ public class UserInfoPanel : MonoBehaviour
         }
 
     }
+
+    public void OpenSettingPanel()
+    {
+        settingPanel.SetActive(true);
+    }
+    
 }

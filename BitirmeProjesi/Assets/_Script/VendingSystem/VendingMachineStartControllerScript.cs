@@ -21,6 +21,7 @@ public class VendingMachineStartControllerScript : MonoBehaviour
         {
             //Open out of order screen
             Debug.Log("Out of order!");
+            SceneManager.LoadScene(5);
         }
            
         
@@ -48,7 +49,7 @@ public class VendingMachineStartControllerScript : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     IEnumerator ICheckRecipeID(string qrCode)
     {   

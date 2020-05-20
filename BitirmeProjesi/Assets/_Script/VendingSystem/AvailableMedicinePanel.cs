@@ -5,6 +5,7 @@ using System.IO.Ports;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class MedicineCounter
 {
@@ -26,7 +27,7 @@ public class AvailableMedicinePanel : MonoBehaviour
     public TMP_Text popUpText;
     
     List<string> availableIdInSystemToGive = new List<string>();
-
+    private bool flag = false;
     private void Start()
     {    
         StartCoroutine(GetMedicineNameAndCount(RecipeInformation.RecipeNo));
@@ -101,16 +102,22 @@ public class AvailableMedicinePanel : MonoBehaviour
         foreach (var medicineCounter in medicineCounters)
         {    
             Debug.Log("Medicine ID:"+medicineCounter.medicineID);
-            if (CheckStock(medicineCounter.medicineID, medicineCounter.medicineCount))
+            int countforMedicine = CheckStock(medicineCounter.medicineID, medicineCounter.medicineCount);
+            if (countforMedicine < medicineCounter.medicineCount)
+            {
+                notFoundCounter++;
+            }
+            if (countforMedicine !=0)
             {  
                 GameObject temp = Instantiate(availableMedicinePrefab, transform.position, Quaternion.identity);
-                temp.GetComponent<AvailableMedicineBox>().SetBox(medicineCounter.medicineName,medicineCounter.medicineCount.ToString()+"x");
+                temp.GetComponent<AvailableMedicineBox>().SetBox(medicineCounter.medicineName,countforMedicine+"x");
                 temp.transform.SetParent(targetList.transform);
                 temp.GetComponent<RectTransform>().localScale=Vector3.one;
-                for (int i = 0; i < medicineCounter.medicineCount; i++)
+                for (int i = 0; i < countforMedicine; i++)
                 {
                     availableIdInSystemToGive.Add(medicineCounter.medicineID);
                     //Use this for delete from db.
+                    Debug.Log(medicineCounter.medicineID+" added to list");
                 }
               
             }
@@ -133,24 +140,97 @@ public class AvailableMedicinePanel : MonoBehaviour
         
     }
 
-    bool CheckStock(string ID,int counter)
+    int CheckStock(string ID,int counter)
     {
         foreach (var medicine in Stock.stock)
-        {   
+        {
             if (medicine.medicineID == ID)
             {
                 if (medicine.count >= counter)
                 {
-                    return true;
+                    return counter;
+                }
+                else
+                {
+                    return medicine.count;
                 }
             }
         }
 
-        return false;
+        return 0;
     }
-    
-    int InputFromSensors()
+
+    IEnumerator Approve()
     {
+        //reduce from stock and db
+        Debug.Log(availableIdInSystemToGive.Count);
+        foreach (var ID in availableIdInSystemToGive)
+        {
+            foreach (var medicineStock in Stock.stock)
+            {
+                if (ID == medicineStock.medicineID)
+                {
+                    medicineStock.count--;  
+                    Debug.Log(ID+" reduced.");
+                    //Delete from db
+                    WWWForm deleteForm = new WWWForm();
+                    deleteForm.AddField("M_ID",ID);
+                    deleteForm.AddField("RecipeNo",RecipeInformation.RecipeNo);
+                    UnityWebRequest mww= UnityWebRequest.Post("http://localhost/DeleteContainFromDB.php",deleteForm); 
+                    mww.SendWebRequest();
+                }
+            }
+        }
+        Debug.Log("Approve Check");
+        //Check there is left any medicine on receipt
+        yield return new WaitForSeconds(1);
+        StartCoroutine(CheckContainCount());
+        
+    }
+
+    IEnumerator DeleteRecipe()
+    {
+        //delete recipe
+        WWWForm recipeDelete = new WWWForm();
+        recipeDelete.AddField("RecipeNo",RecipeInformation.RecipeNo);
+        UnityWebRequest rww= UnityWebRequest.Post("http://localhost/DeleteRecipeFromDB.php",recipeDelete);
+        yield return rww.SendWebRequest();
+        Debug.Log("Delete Check");
+        SceneManager.LoadScene(4);
+    }
+    IEnumerator CheckContainCount()
+    {
+        WWWForm checkCount = new WWWForm();
+        checkCount.AddField("RecipeNo",RecipeInformation.RecipeNo);
+        UnityWebRequest ww= UnityWebRequest.Post("http://localhost/GetContainCountOnMedicine.php",checkCount); 
+        ww.SendWebRequest();
+        yield return new WaitForSeconds(1);
+        Debug.Log("Contain Check");
+        if (ww.downloadHandler.text == 0.ToString() )
+        {
+            StartCoroutine(DeleteRecipe());
+        }
+        else
+        {
+            SceneManager.LoadScene(4);
+        }
+        yield return null;
+    }
+    void Reject()
+    {
+        SceneManager.LoadScene(0);
+    }
+    int InputFromSensors()
+    {   
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            return 2;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            return 1;
+        }
         if (sp.IsOpen)
         {
             try
@@ -167,6 +247,7 @@ public class AvailableMedicinePanel : MonoBehaviour
             }
         }
 
+     
         return 0;
     }
 
@@ -174,6 +255,17 @@ public class AvailableMedicinePanel : MonoBehaviour
     void Update()
     {
         
+        int x = InputFromSensors();
+        if (x == 1 && !flag)
+        {
+            StartCoroutine(Approve());
+            flag = true;
+          
+        }
+        else if (x == 2 && !flag)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
     void PopUp(string message)
     {

@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VendingMachine System/VendingMachineStartScene.unity
-    guid: c6c693ce134a68f4d809799bce321fee
+    path: Assets/Scenes/UserSystem/UserLogin.unity
+    guid: 40abeb310e589be42ad12c79014961cb
   - enabled: 1
-    path: Assets/Scenes/VendingMachine System/QrReadingScene.unity
-    guid: 66b82d857a3e7b84b8fa677c1633f918
-  - enabled: 1
-    path: Assets/Scenes/VendingMachine System/RecipeDetailsAndStockScene.unity
-    guid: 3e5a2d2fc6985b44e8a16c2815c38373
+    path: Assets/Scenes/UserSystem/UserMainPanel.unity
+    guid: 07eeafb43537f284c9ef0fee4b9851ee
   m_configObjects: {}

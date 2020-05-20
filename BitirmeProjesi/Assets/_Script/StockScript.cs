@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using TMPro;
 [System.Serializable]
 public class MedicineStock
 {
@@ -13,11 +14,67 @@ public class MedicineStock
 [System.Serializable]
 public  class StockScript : MonoBehaviour
 {
-    public  List<MedicineStock> MedicineStocks = new List<MedicineStock>();
+    List<MedicineStock> MedicineStocks = new List<MedicineStock>();
 
-    private void Awake()
-    {
+    public TMP_InputField slot1MedicineID;
+    public TMP_InputField slot1Count;
+    public TMP_InputField slot2MedicineID;
+    public TMP_InputField slot2Count;
+    public TMP_InputField slot3MedicineID;
+    public TMP_InputField slot3Count;
+    public TMP_InputField slot4MedicineID;
+    public TMP_InputField slot4Count;
+    public TMP_InputField slot5MedicineID;
+    public TMP_InputField slot5Count;
+    public TMP_InputField slot6MedicineID;
+    public TMP_InputField slot6Count;
+    public void SaveAndStartButton()
+    {   
+        MedicineStocks= new List<MedicineStock>();
+        MedicineStock temp = new MedicineStock();
+        if(slot1MedicineID.text.Length>0 && slot1Count.text.Length>0)
+        {
+            temp.medicineID = slot1MedicineID.text;
+            temp.count =int.Parse(slot1Count.text);
+            MedicineStocks.Add(temp);
+        }
+        if(slot2MedicineID.text.Length>0 && slot2Count.text.Length>0)
+        {
+            temp=new MedicineStock();
+            temp.medicineID = slot2MedicineID.text;
+            temp.count =int.Parse(slot2Count.text);
+            MedicineStocks.Add(temp);
+        }
+        if(slot3MedicineID.text.Length>0 && slot3Count.text.Length>0)
+        {
+            temp=new MedicineStock();
+            temp.medicineID = slot3MedicineID.text;
+            temp.count =int.Parse(slot3Count.text);
+            MedicineStocks.Add(temp);
+        }
+        if(slot4MedicineID.text.Length>0 && slot4Count.text.Length>0)
+        {
+            temp=new MedicineStock();
+            temp.medicineID = slot4MedicineID.text;
+            temp.count =int.Parse(slot4Count.text);
+            MedicineStocks.Add(temp);
+        }
+        if(slot5MedicineID.text.Length>0 && slot5Count.text.Length>0)
+        {
+            temp=new MedicineStock();
+            temp.medicineID = slot5MedicineID.text;
+            temp.count =int.Parse(slot5Count.text);
+            MedicineStocks.Add(temp);
+        }
+        if(slot6MedicineID.text.Length>0 && slot6Count.text.Length>0)
+        {
+            temp=new MedicineStock();
+            temp.medicineID = slot6MedicineID.text;
+            temp.count =int.Parse(slot6Count.text);
+            MedicineStocks.Add(temp);
+        }
         Stock.stock = MedicineStocks;
+        SceneManager.LoadScene(1);
     }
 }
 

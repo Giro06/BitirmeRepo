@@ -23,20 +23,27 @@ public class QRreadScript : MonoBehaviour
 
     private string currentString;
     void Start() {
-        
+         Debug.Log("Start");
         camTexture = new WebCamTexture();
         camTexture.requestedHeight = 1000; 
         camTexture.requestedWidth = 1000;
         rawImage.texture = camTexture;
         rawImage.material.mainTexture = camTexture;
         if (camTexture != null) {
+            Debug.Log("Cam start");
             camTexture.Play();
         }
+        
     }
 
     void Update()
     {
        string recipeNo= ReadQrCode();
+       if (recipeNo == "0")
+       {   
+           camTexture.Stop();
+           SceneManager.LoadScene(0); 
+       }
        if (recipeNo != null)
        {
            if (currentString != recipeNo)
@@ -75,7 +82,9 @@ public class QRreadScript : MonoBehaviour
             PopUp("Recipe Found Succesfully!");
             RecipeInformation.RecipeNo = recipeNo;
             yield return new WaitForSeconds(2);
-            SceneManager.LoadScene(2);
+            camTexture.Stop();
+            SceneManager.LoadScene(3);
+         
         }
         else
         {

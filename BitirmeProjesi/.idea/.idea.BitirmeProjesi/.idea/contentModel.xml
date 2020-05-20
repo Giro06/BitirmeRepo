@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="_Script" t="Include">
           <e p="AdminPanelScript.cs" t="Include" />
+          <e p="CloseButton.cs" t="Include" />
           <e p="CurrentTime.cs" t="Include" />
           <e p="DoctorSystem" t="Include">
             <e p="AddMedicineToList.cs" t="Include" />
@@ -16,10 +17,13 @@
             <e p="DoctorLoginScript.cs" t="Include" />
             <e p="DoctorMainPanelScript.cs" t="Include" />
             <e p="MedicineBox.cs" t="Include" />
+            <e p="ReceiptBoxForDoctor.cs" t="Include" />
             <e p="ReceiptListController.cs" t="Include" />
+            <e p="UserReceiptListManager.cs" t="Include" />
           </e>
           <e p="StockScript.cs" t="Include" />
           <e p="UserSystem" t="Include">
+            <e p="ChangePasswordManager.cs" t="Include" />
             <e p="ContainBox.cs" t="Include" />
             <e p="RecipeBox.cs" t="Include" />
             <e p="RecipeDetailsPanel.cs" t="Include" />
@@ -31,8 +35,10 @@
           <e p="VendingSystem" t="Include">
             <e p="AvailableMedicineBox.cs" t="Include" />
             <e p="AvailableMedicinePanel.cs" t="Include" />
+            <e p="OutOfOrder.cs" t="Include" />
             <e p="QRreadScript.cs" t="Include" />
             <e p="RecipeInformation.cs" t="Include" />
+            <e p="ThanksScreenController.cs" t="Include" />
             <e p="VendingMachineStartControllerScript.cs" t="Include" />
           </e>
         </e>
