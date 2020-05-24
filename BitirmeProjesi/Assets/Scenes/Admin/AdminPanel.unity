@@ -16485,10 +16485,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 513463328}
     m_Modifications:
+    - target: {fileID: 7585030524732780253, guid: b80b5a245aabca340bf9bc841904a3f0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7585030525621971736, guid: b80b5a245aabca340bf9bc841904a3f0,
         type: 3}
       propertyPath: m_Name
       value: Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585030525621971736, guid: b80b5a245aabca340bf9bc841904a3f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7585030525621971737, guid: b80b5a245aabca340bf9bc841904a3f0,
         type: 3}

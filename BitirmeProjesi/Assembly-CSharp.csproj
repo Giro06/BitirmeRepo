@@ -81,7 +81,7 @@
      <Compile Include="Assets\Modern UI Pack\Scripts\ToggleAnim.cs" />
      <Compile Include="Assets\Modern UI Pack\Scripts\UIElementInFront.cs" />
      <Compile Include="Assets\Modern UI Pack\Scripts\UIGradient.cs" />
-     <Compile Include="Assets\_Script\AdminPanelScript.cs" />
+     <Compile Include="Assets\_Script\Admin\AdminPanelScript.cs" />
      <Compile Include="Assets\_Script\CloseButton.cs" />
      <Compile Include="Assets\_Script\CurrentTime.cs" />
      <Compile Include="Assets\_Script\DoctorSystem\AddMedicineToList.cs" />

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/UserSystem/UserLogin.unity
+- path: Assets/Scenes/UserSystem/UserMainPanel.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

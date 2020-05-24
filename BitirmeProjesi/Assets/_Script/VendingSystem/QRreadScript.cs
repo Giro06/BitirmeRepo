@@ -17,20 +17,26 @@ public class QRreadScript : MonoBehaviour
     public GameObject popUp;
     public TMP_Text popUpText;
     
+    //Cameranın pointerı
     private WebCamTexture camTexture;
     
+    //Camera outputunu gösterilecek ımage
     public RawImage rawImage;
 
     private string currentString;
     void Start() {
-         Debug.Log("Start");
+        
+        // sistemdeki ilk camerayı tanımla
         camTexture = new WebCamTexture();
+        // Kameranın çözünürlük ayarları
         camTexture.requestedHeight = 1000; 
         camTexture.requestedWidth = 1000;
+        //Raw image 'e  kameradan gelen görüntüyü aktarıyoruz.
         rawImage.texture = camTexture;
         rawImage.material.mainTexture = camTexture;
+        
+        //Eğer kamera varsa görüntü almayı başlatıyoruz.
         if (camTexture != null) {
-            Debug.Log("Cam start");
             camTexture.Play();
         }
         
@@ -39,16 +45,21 @@ public class QRreadScript : MonoBehaviour
     void Update()
     {
        string recipeNo= ReadQrCode();
+       //Stock doldurmak için 0
        if (recipeNo == "0")
        {   
+           //Cam durdur ve  stock doldurma ekranına geç
            camTexture.Stop();
            SceneManager.LoadScene(0); 
        }
+       // eğer gerçekden bi qr okunduysa 
        if (recipeNo != null)
-       {
+       {      
+           
            if (currentString != recipeNo)
-           {
+           {   
                currentString = recipeNo;
+               //Reçete kontrol fonksiyonunu kontrol et.
                StartCoroutine(CheckRecipe(recipeNo));
            }
        }
@@ -57,8 +68,10 @@ public class QRreadScript : MonoBehaviour
     string ReadQrCode()
     {   
         try {
+            //Barcode reader yaratıyoruz.
             IBarcodeReader barcodeReader = new BarcodeReader ();
             // decode the current frame
+            // Kamerada qr code varmı yok mu diye bakıp varsa şifresini çözüyoruz.
             var result = barcodeReader.Decode(camTexture.GetPixels32(),
                 camTexture.width, camTexture.height);
             if (result != null) {
@@ -69,7 +82,8 @@ public class QRreadScript : MonoBehaviour
 
         return null;
     }
-
+    
+    //Reçetenin databasede var olup olmadığını kontrol ediyoruz.
     IEnumerator CheckRecipe(string recipeNo)
     {
         WWWForm form= new WWWForm();
@@ -83,6 +97,7 @@ public class QRreadScript : MonoBehaviour
             RecipeInformation.RecipeNo = recipeNo;
             yield return new WaitForSeconds(2);
             camTexture.Stop();
+            // reçete detay ekranına geç
             SceneManager.LoadScene(3);
          
         }
